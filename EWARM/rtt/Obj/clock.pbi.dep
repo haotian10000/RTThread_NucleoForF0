@@ -1,0 +1,10 @@
+clock.pbi: \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\src\clock.c \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rthw.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtthread.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\bsp\rtconfig.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtdebug.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtdef.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdarg.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtservice.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtm.h

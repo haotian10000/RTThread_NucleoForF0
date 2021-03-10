@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "rtthread.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,7 +51,34 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
+rt_sem_t dynamic_sem;
+void LedThreadRevSemphoreEntry(void* parameter)
+{
+   static rt_err_t result;
+    while (1)
+    {
+        result = rt_sem_take(dynamic_sem, RT_WAITING_FOREVER);
+        if(result == RT_EOK)
+        {
+            HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+        }
+    }
+}
+void LedThreadSndSemphoreEntry(void* parameter)
+{
+    static rt_uint8_t flg = 1;
+     while (1)
+    {
+        if(flg == 1)
+        {
+            flg = 0;
+            rt_thread_mdelay(5000);
+        }
+        rt_thread_mdelay(100);
+        rt_sem_release(dynamic_sem);
+    }
+    
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -79,7 +106,7 @@ int main(void)
   /* USER CODE END Init */
 
   /* Configure the system clock */
-  SystemClock_Config();
+  //SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
 
@@ -89,7 +116,41 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  dynamic_sem = rt_sem_create("dsem", 0, RT_IPC_FLAG_FIFO);
+  if(dynamic_sem == RT_NULL)
+  {
+      while (1)
+      {
+          
+      }
+      
+  }
+  rt_thread_t led_thread_rev;
+  led_thread_rev = rt_thread_create(
+      "led_rev_entry" ,
+      LedThreadRevSemphoreEntry ,
+      RT_NULL ,
+      256 ,
+      20 ,
+      20
+  );
+  if(led_thread_rev != RT_NULL)
+  {
+      rt_thread_startup(led_thread_rev);
+  }
+    rt_thread_t led_thread_snd;
+  led_thread_snd = rt_thread_create(
+      "led_snd_entry" ,
+      LedThreadSndSemphoreEntry ,
+      RT_NULL ,
+      256 ,
+      20 ,
+      20
+  );
+  if(led_thread_snd != RT_NULL)
+  {
+      rt_thread_startup(led_thread_snd);
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -97,7 +158,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    rt_thread_mdelay(500);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

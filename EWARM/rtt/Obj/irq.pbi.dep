@@ -1,9 +1,10 @@
-irq.pbi: D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\src\irq.c \
-  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rthw.h \
-  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtthread.h \
-  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\bsp\rtconfig.h \
-  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtdebug.h \
-  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtdef.h \
+irq.pbi: \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\irq.c \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include\rthw.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include\rtthread.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../RT-Thread\rtconfig.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include\rtdebug.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include\rtdef.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdarg.h \
-  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtservice.h \
-  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\rtm.h
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include\rtservice.h \
+  D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include\rtm.h

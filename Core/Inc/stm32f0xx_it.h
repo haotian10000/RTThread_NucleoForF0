@@ -48,7 +48,6 @@
 
 /* Exported functions prototypes ---------------------------------------------*/
 void NMI_Handler(void);
-void SVC_Handler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */

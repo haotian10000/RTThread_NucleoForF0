@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
-  */
+    ******************************************************************************
+    * @file           : main.c
+    * @brief          : Main program body
+    ******************************************************************************
+    * @attention
+    *
+    * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+    * All rights reserved.</center></h2>
+    *
+    * This software component is licensed by ST under BSD 3-Clause license,
+    * the "License"; You may not use this file except in compliance with the
+    * License. You may obtain a copy of the License at:
+    *                        opensource.org/licenses/BSD-3-Clause
+    *
+    ******************************************************************************
+    */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -51,34 +51,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
-rt_sem_t dynamic_sem;
-void LedThreadRevSemphoreEntry(void* parameter)
-{
-   static rt_err_t result;
-    while (1)
-    {
-        result = rt_sem_take(dynamic_sem, RT_WAITING_FOREVER);
-        if(result == RT_EOK)
-        {
-            HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-        }
-    }
-}
-void LedThreadSndSemphoreEntry(void* parameter)
-{
-    static rt_uint8_t flg = 1;
-     while (1)
-    {
-        if(flg == 1)
-        {
-            flg = 0;
-            rt_thread_mdelay(5000);
-        }
-        rt_thread_mdelay(100);
-        rt_sem_release(dynamic_sem);
-    }
-    
-}
+extern void DynamicSemExample(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -106,7 +79,7 @@ int main(void)
   /* USER CODE END Init */
 
   /* Configure the system clock */
-  //SystemClock_Config();
+  SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
 
@@ -116,51 +89,17 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  dynamic_sem = rt_sem_create("dsem", 0, RT_IPC_FLAG_FIFO);
-  if(dynamic_sem == RT_NULL)
-  {
-      while (1)
-      {
-          
-      }
-      
-  }
-  rt_thread_t led_thread_rev;
-  led_thread_rev = rt_thread_create(
-      "led_rev_entry" ,
-      LedThreadRevSemphoreEntry ,
-      RT_NULL ,
-      256 ,
-      20 ,
-      20
-  );
-  if(led_thread_rev != RT_NULL)
-  {
-      rt_thread_startup(led_thread_rev);
-  }
-    rt_thread_t led_thread_snd;
-  led_thread_snd = rt_thread_create(
-      "led_snd_entry" ,
-      LedThreadSndSemphoreEntry ,
-      RT_NULL ,
-      256 ,
-      20 ,
-      20
-  );
-  if(led_thread_snd != RT_NULL)
-  {
-      rt_thread_startup(led_thread_snd);
-  }
+    DynamicSemExample();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+    while (1)
+    {
     /* USER CODE END WHILE */
-    rt_thread_mdelay(500);
+
     /* USER CODE BEGIN 3 */
-  }
+    }
   /* USER CODE END 3 */
 }
 
@@ -279,11 +218,11 @@ static void MX_GPIO_Init(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+    /* User can add his own implementation to report the HAL error return state */
+    __disable_irq();
+    while (1)
+    {
+    }
   /* USER CODE END Error_Handler_Debug */
 }
 
@@ -298,7 +237,7 @@ void Error_Handler(void)
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-  /* User can add his own implementation to report the file name and line number,
+    /* User can add his own implementation to report the file name and line number,
      ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }

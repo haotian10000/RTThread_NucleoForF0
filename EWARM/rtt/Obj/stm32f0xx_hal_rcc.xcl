@@ -26,6 +26,10 @@ D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\libc
 -I
 D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\bsp
 -I
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../RT-Thread
+-I
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/
+-I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc\c
@@ -45,6 +49,10 @@ D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\include
 D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\include\libc
 -I
 D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\bsp
+-I
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RT-Thread
+-I
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\include
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

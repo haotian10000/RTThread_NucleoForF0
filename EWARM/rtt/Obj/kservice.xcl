@@ -1,4 +1,4 @@
-"D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\src\kservice.c"
+"D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\kservice.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
@@ -8,7 +8,7 @@ D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\rtt\Obj\kservice.pbi.dep
 -o
 kservice.pbi
 -I
-D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\src
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src
 -I
 D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Core/Inc
 -I
@@ -25,6 +25,10 @@ D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include
 D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\include\libc
 -I
 D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM\..\RTThread\bsp
+-I
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../RT-Thread
+-I
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\EWARM/../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc
 -I
@@ -45,6 +49,10 @@ D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\include
 D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\include\libc
 -I
 D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RTThread\bsp
+-I
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\RT-Thread
+-I
+D:\RT-Thread\Soft\rtt\RTThread_NucleoForF0\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\include
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

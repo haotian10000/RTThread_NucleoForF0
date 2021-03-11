@@ -21,6 +21,7 @@ rule browsedata
 
 #Build steps
 build main.pbi : index main.xcl
+build semphore_example.pbi : index semphore_example.xcl
 build stm32f0xx_hal_msp.pbi : index stm32f0xx_hal_msp.xcl
 build stm32f0xx_it.pbi : index stm32f0xx_it.xcl
 build system_stm32f0xx.pbi : index system_stm32f0xx.xcl
@@ -44,28 +45,23 @@ build stm32f0xx_hal_uart_ex.pbi : index stm32f0xx_hal_uart_ex.xcl
 build board.pbi : index board.xcl
 build clock.pbi : index clock.xcl
 build components.pbi : index components.xcl
-build cpu.pbi : index cpu.xcl
 build cpuport.pbi : index cpuport.xcl
 build idle.pbi : index idle.xcl
 build ipc.pbi : index ipc.xcl
 build irq.pbi : index irq.xcl
 build kservice.pbi : index kservice.xcl
 build mem.pbi : index mem.xcl
-build memheap.pbi : index memheap.xcl
-build mempool.pbi : index mempool.xcl
 build object.pbi : index object.xcl
 build scheduler.pbi : index scheduler.xcl
-build slab.pbi : index slab.xcl
 build thread.pbi : index thread.xcl
 build timer.pbi : index timer.xcl
-build rtt_part0.pbi : link main.pbi stm32f0xx_hal_msp.pbi stm32f0xx_it.pbi system_stm32f0xx.pbi stm32f0xx_hal.pbi stm32f0xx_hal_cortex.pbi
-build rtt_part1.pbi : link stm32f0xx_hal_dma.pbi stm32f0xx_hal_exti.pbi stm32f0xx_hal_flash.pbi stm32f0xx_hal_flash_ex.pbi stm32f0xx_hal_gpio.pbi stm32f0xx_hal_i2c.pbi
-build rtt_part2.pbi : link stm32f0xx_hal_i2c_ex.pbi stm32f0xx_hal_pwr.pbi stm32f0xx_hal_pwr_ex.pbi stm32f0xx_hal_rcc.pbi stm32f0xx_hal_rcc_ex.pbi stm32f0xx_hal_tim.pbi
-build rtt_part3.pbi : link stm32f0xx_hal_tim_ex.pbi stm32f0xx_hal_uart.pbi stm32f0xx_hal_uart_ex.pbi board.pbi clock.pbi components.pbi
-build rtt_part4.pbi : link cpu.pbi cpuport.pbi idle.pbi ipc.pbi irq.pbi kservice.pbi
-build rtt_part5.pbi : link mem.pbi memheap.pbi mempool.pbi object.pbi scheduler.pbi slab.pbi
-build rtt_part6.pbi : link thread.pbi timer.pbi
-build rtt.pbd : link rtt_part0.pbi rtt_part1.pbi rtt_part2.pbi rtt_part3.pbi rtt_part4.pbi rtt_part5.pbi rtt_part6.pbi
+build rtt_part0.pbi : link main.pbi semphore_example.pbi stm32f0xx_hal_msp.pbi stm32f0xx_it.pbi system_stm32f0xx.pbi stm32f0xx_hal.pbi
+build rtt_part1.pbi : link stm32f0xx_hal_cortex.pbi stm32f0xx_hal_dma.pbi stm32f0xx_hal_exti.pbi stm32f0xx_hal_flash.pbi stm32f0xx_hal_flash_ex.pbi stm32f0xx_hal_gpio.pbi
+build rtt_part2.pbi : link stm32f0xx_hal_i2c.pbi stm32f0xx_hal_i2c_ex.pbi stm32f0xx_hal_pwr.pbi stm32f0xx_hal_pwr_ex.pbi stm32f0xx_hal_rcc.pbi stm32f0xx_hal_rcc_ex.pbi
+build rtt_part3.pbi : link stm32f0xx_hal_tim.pbi stm32f0xx_hal_tim_ex.pbi stm32f0xx_hal_uart.pbi stm32f0xx_hal_uart_ex.pbi board.pbi clock.pbi
+build rtt_part4.pbi : link components.pbi cpuport.pbi idle.pbi ipc.pbi irq.pbi kservice.pbi
+build rtt_part5.pbi : link mem.pbi object.pbi scheduler.pbi thread.pbi timer.pbi
+build rtt.pbd : link rtt_part0.pbi rtt_part1.pbi rtt_part2.pbi rtt_part3.pbi rtt_part4.pbi rtt_part5.pbi
 build rtt.pbw : browsedata rtt.pbd
 
 

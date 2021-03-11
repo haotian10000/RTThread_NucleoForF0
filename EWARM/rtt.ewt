@@ -1202,6 +1202,9 @@
                     <name>$PROJ_DIR$\..\Core\Src\main.c</name>
                 </file>
                 <file>
+                    <name>$PROJ_DIR$\..\Core\Src\semphore_example.c</name>
+                </file>
+                <file>
                     <name>$PROJ_DIR$\..\Core\Src\stm32f0xx_hal_msp.c</name>
                 </file>
                 <file>
@@ -1274,63 +1277,54 @@
         </group>
     </group>
     <group>
-        <name>RTThread</name>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\bsp\board.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\clock.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\components.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\libcpu\arm\cortex-m0\context_iar.S</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\cpu.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\libcpu\arm\cortex-m0\cpuport.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\idle.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\ipc.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\irq.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\kservice.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\mem.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\memheap.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\mempool.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\object.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\bsp\rtconfig.h</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\scheduler.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\slab.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\thread.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\RTThread\src\timer.c</name>
-        </file>
+        <name>Middlewares</name>
+        <group>
+            <name>RT-Thread</name>
+            <group>
+                <name>RTOS/kernel</name>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\bsp\board.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\clock.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\components.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\libcpu\arm\cortex-m0\context_iar.S</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\libcpu\arm\cortex-m0\cpuport.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\idle.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\ipc.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\irq.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\kservice.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\mem.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\object.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\scheduler.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\thread.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\src\timer.c</name>
+                </file>
+            </group>
+        </group>
     </group>
 </project>
